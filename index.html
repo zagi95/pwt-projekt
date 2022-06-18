@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pwt-josip-zagar</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+  <body>
+    <header class="debeli">
+        <h1 id="h1-naslov">Welt</h1>
+        <nav>
+            <h5 class="menu-item">Home</h5>
+            <h5 class="menu-item">Beruf & Karriere</h5>
+            <h5 class="menu-item">Food</h5>
+            <h5 class="menu-item">Administracija</h5>
+            <h5 class="menu-item"><a href="unos.html">Unos</a></h5>
+        </nav>
+    </header>
+    
+    <section class="tekst">
+        <h2>Beruf & Karriere</h2>
+        <article>
+            <img width = 100% height="40%">
+        </article>
+        
+        <article>
+
+        </article>
+        
+        <article>
+
+        </article>
+    </section>
+    
+    <section class="tekst">
+        <h2>Food</h2>
+        <article>
+
+        </article>
+        
+        <article>
+
+        </article>
+
+        <article>
+
+        </article>
+    </section>
+
+    <footer class="debeli">
+        <h1>Welt</h1>
+    </footer>
+  </body>
+</html>
+
+<section class="Crna kronika">
+  <?php
+  $query = "SELECT * FROM vijesti WHERE arhiva=0 AND kategorija='crna_kronika' LIMIT 4";
+  $result = mysqli_query($dbc, $query);
+   $i=0;
+   while($row = mysqli_fetch_array($result)) {
+   echo '<article>';
+   echo'<div class="article">';
+   echo '<div class="sport_img">';
+   echo '<img src="' . UPLPATH . $row['slika'] . '"';
+   echo '</div>';
+   echo '<div class="media_body">';
+   echo '<h4 class="title">';
+   echo '<a href="clanak.php?id='.$row['id'].'">';
+   echo $row['naslov'];
+   echo '</a></h4>';
+   echo '</div></div>';
+   echo '</article>';
+   }?>
+  </section>

@@ -1,0 +1,18 @@
+img{
+    max-height: 50%;
+    max-width: 50%;
+}
+section{
+    padding-left: 2%;
+}
+.category{
+    padding-left: 0%;
+}
+.slika{
+    display: flex;
+    justify-content: center;
+}
+.sadrzaj{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pwt-josip-zagar</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+  <body>
+    <header class="debeli">
+        <h1 id="h1-naslov">Welt</h1>
+        <nav>
+          <h5 class="menu-item"><a href="index.php">Home</a></h5>
+          <h5 class="menu-item">Beruf & Karriere</h5>
+          <h5 class="menu-item">Food</h5>
+          <h5 class="menu-item"><a href="administracija.php">Administracija</a></h5>
+          <h5 class="menu-item"><a href="unos.html">Unos</a></h5>
+          <h5 class="menu-item"><a href="registracija.html">Registracija</a></h5>
+          <h5 class="menu-item"><a href="login.html">Login</a></h5>
+        </nav>
+    </header>
+
+    <section role="main">
+        <form enctype="multipart/form-data" action="login.php" method="POST">
+            <div class="form-item">
+                <span id="porukaUsername" class="bojaPoruke"></span>
+                <label for="korisnicko_ime">Korisnicko ime:</label>
+                <!-- Ispis poruke nakon provjere korisničkog imena u bazi -->
+                <br><span class="bojaPoruke"><?phpecho $msg; ?></span>
+                <div class="form-field">
+                    <input type="text" name="korisnicko_ime" id="korisnicko_ime" class="formfield-textual">
+                </div>
+            </div>
+            <div class="form-item">
+                <span id="porukaPass" class="bojaPoruke"></span>
+                <label for="lozinka">Lozinka: </label>
+                <div class="form-field">
+                    <input type="password" name="lozinka" id="lozinka" class="formfield-textual">
+                </div>
+            </div>
+            <div class="form-item">
+                <button type="submit" value="Prijava" id="prijava">Prijava</button>
+            </div>
+        </form>
+    </section>
+
+    <script type="text/javascript">
+        document.getElementById("slanje").onclick = function(event) {
+    
+        var slanjeForme = true;
+    
+     // Korisničko ime mora biti uneseno
+        var poljeUsername = document.getElementById("username");
+        var username = document.getElementById("username").value;
+        if (username.length == 0) {
+            slanjeForme = false;
+            poljeUsername.style.border="1px dashed red";
+            document.getElementById("porukaUsername").innerHTML="<br>Unesite korisničko ime!<br>";
+        } else {
+            poljeUsername.style.border="1px solid green";
+            document.getElementById("porukaUsername").innerHTML="";
+        }
+        };
+    
+    </script>
+    <footer class="debeli">
+        <h1>Welt</h1>
+    </footer>
+    </body>
+</html>
